@@ -1,0 +1,384 @@
+/* RealEstateDashboard.css */
+.realestate-dashboard {
+  padding: 24px;
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.welcome-title {
+  font-weight: 700 !important;
+  color: white !important;
+  margin-bottom: 8px !important;
+}
+
+.welcome-subtitle {
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: 500 !important;
+}
+
+.primary-button {
+  background: rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+}
+
+.primary-button:hover {
+  background: rgba(255,255,255,0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* Stats Cards */
+.stat-card {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.9) !important;
+  transition: all 0.3s ease !important;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15) !important;
+}
+
+.stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stat-number {
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+  background: linear-gradient(45deg, #1a237e, #283593);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-title {
+  font-weight: 600 !important;
+  color: #2c3e50 !important;
+  margin-bottom: 4px !important;
+}
+
+.stat-subtitle {
+  color: #7d8fa9 !important;
+  font-weight: 500 !important;
+}
+
+.stat-icon {
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.blue {
+  background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+  color: #1976d2;
+}
+
+.stat-icon.green {
+  background: linear-gradient(45deg, #e8f5e8, #c8e6c9);
+  color: #388e3c;
+}
+
+.stat-icon.gold {
+  background: linear-gradient(45deg, #fff8e1, #ffecb3);
+  color: #ff8f00;
+}
+
+.stat-icon.purple {
+  background: linear-gradient(45deg, #f3e5f5, #e1bee7);
+  color: #7b1fa2;
+}
+
+/* Section Cards */
+.section-card {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.9) !important;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+}
+
+.view-all-button {
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  border-color: #bdc3c7 !important;
+  color: #1a237e !important;
+}
+
+/* Properties Table */
+.property-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.property-avatar {
+  background: linear-gradient(45deg, #1a237e, #283593) !important;
+}
+
+.property-address {
+  font-weight: 600 !important;
+  color: #2c3e50;
+}
+
+.type-chip {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+  font-weight: 600 !important;
+}
+
+.property-price {
+  font-weight: 700 !important;
+  color: #1a237e;
+}
+
+.status-chip {
+  font-weight: 600 !important;
+}
+
+.status-chip.active {
+  background: #e8f5e8 !important;
+  color: #388e3c !important;
+}
+
+.status-chip.pending {
+  background: #fff3e0 !important;
+  color: #f57c00 !important;
+}
+
+.status-chip.sold {
+  background: #f5f5f5 !important;
+  color: #757575 !important;
+}
+
+.views-count {
+  font-weight: 700 !important;
+  color: #ff8f00;
+}
+
+.days-on-market {
+  color: #7d8fa9 !important;
+  font-weight: 500 !important;
+}
+
+/* Deals List */
+.deals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.deal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.deal-item:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.deal-info {
+  flex: 1;
+}
+
+.property-name {
+  font-weight: 600 !important;
+  color: #2c3e50;
+  margin-bottom: 2px !important;
+}
+
+.client-name {
+  color: #1a237e !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-bottom: 2px !important;
+}
+
+.deal-meta {
+  color: #7d8fa9 !important;
+}
+
+.deal-amount {
+  font-weight: 700 !important;
+  color: #388e3c;
+  margin-bottom: 4px !important;
+}
+
+.status-chip.completed {
+  background: #e8f5e8 !important;
+  color: #388e3c !important;
+}
+
+.status-chip.in-progress {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+}
+
+.status-chip.negotiation {
+  background: #fff3e0 !important;
+  color: #f57c00 !important;
+}
+
+/* Alerts */
+.alerts-card {
+  margin-top: 24px;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.alert-item:hover {
+  transform: translateX(4px);
+}
+
+.alert-item.trend {
+  background: #e8f5e8;
+  border-left-color: #388e3c;
+}
+
+.alert-item.opportunity {
+  background: #fff3e0;
+  border-left-color: #f57c00;
+}
+
+.alert-item.maintenance {
+  background: #e3f2fd;
+  border-left-color: #1976d2;
+}
+
+.alert-icon {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.alert-item.trend .alert-icon {
+  background: #388e3c;
+  color: white;
+}
+
+.alert-item.opportunity .alert-icon {
+  background: #f57c00;
+  color: white;
+}
+
+.alert-item.maintenance .alert-icon {
+  background: #1976d2;
+  color: white;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-message {
+  font-weight: 600 !important;
+  color: #2c3e50;
+  margin-bottom: 4px !important;
+}
+
+.alert-area,
+.alert-location,
+.alert-property {
+  color: #7d8fa9 !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-bottom: 2px !important;
+}
+
+.priority-chip {
+  font-weight: 600 !important;
+}
+
+.priority-chip.high {
+  background: #fff3e0 !important;
+  color: #f57c00 !important;
+}
+
+.priority-chip.medium {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+}
+
+.priority-chip.low {
+  background: #e8f5e8 !important;
+  color: #388e3c !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .realestate-dashboard {
+    padding: 16px;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .deal-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .property-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

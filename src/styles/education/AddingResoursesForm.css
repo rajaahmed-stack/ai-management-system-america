@@ -1,0 +1,252 @@
+/* ResourceForm.css */
+.resource-form-dialog .MuiDialog-paper {
+  border-radius: 20px !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden;
+  max-width: 1200px !important;
+}
+
+.resource-form-dialog .form-title {
+  background: linear-gradient(135deg, #4CC9F0 0%, #4895EF 100%);
+  color: white !important;
+  padding: 32px 24px 24px 24px !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+.resource-form-dialog .form-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+.resource-form-content {
+  padding: 8px 0;
+  background: white;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.resource-form-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.resource-form-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.resource-form-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4CC9F0, #4895EF);
+  border-radius: 3px;
+}
+
+.resource-form-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #4895EF, #4CC9F0);
+}
+
+/* Resources Table Styling */
+.resources-table {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #e2e8f0;
+}
+
+.resources-table .MuiTableHead-root {
+  background: linear-gradient(135deg, #4CC9F0, #4895EF);
+}
+
+.resources-table .MuiTableHead-root .MuiTableCell-head {
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem;
+  border-bottom: none;
+}
+
+.resources-table .MuiTableRow-root {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.resources-table .MuiTableRow-root:hover {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(76, 201, 240, 0.1);
+}
+
+.resources-table .MuiTableCell-body {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 16px;
+}
+
+/* Chip status colors */
+.resources-table .MuiChip-root[data-status="available"] {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.resources-table .MuiChip-root[data-status="in-use"] {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.resources-table .MuiChip-root[data-status="maintenance"] {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.resources-table .MuiChip-root[data-status="unavailable"] {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+/* Action buttons */
+.edit-button {
+  color: #4CC9F0 !important;
+  transition: all 0.3s ease !important;
+  background: rgba(76, 201, 240, 0.1) !important;
+  margin: 2px !important;
+}
+
+.edit-button:hover {
+  background: rgba(76, 201, 240, 0.2) !important;
+  transform: scale(1.1);
+  color: #4895EF !important;
+}
+
+.delete-button {
+  color: #ef4444 !important;
+  transition: all 0.3s ease !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  margin: 2px !important;
+}
+
+.delete-button:hover {
+  background: rgba(239, 68, 68, 0.2) !important;
+  transform: scale(1.1);
+  color: #dc2626 !important;
+}
+
+/* Form section styling */
+.resource-form-dialog .section-title {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border-left: 4px solid #4CC9F0;
+  color: #0c4a6e !important;
+  margin: 24px 0 20px 0 !important;
+  padding: 16px 20px !important;
+  border-radius: 12px;
+  font-size: 1.1rem !important;
+}
+
+/* Form field styling */
+.resource-form-dialog .form-field .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.resource-form-dialog .form-field .MuiOutlinedInput-root:hover {
+  background: #f1f5f9;
+}
+
+.resource-form-dialog .form-field .MuiOutlinedInput-root.Mui-focused {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.1);
+}
+
+.resource-form-dialog .form-field .MuiInputLabel-root.Mui-focused {
+  color: #4CC9F0;
+}
+
+/* Submit button customization */
+.resource-form-dialog .submit-button {
+  background: linear-gradient(135deg, #4CC9F0, #4895EF) !important;
+  box-shadow: 0 4px 15px rgba(76, 201, 240, 0.3) !important;
+}
+
+.resource-form-dialog .submit-button:hover {
+  box-shadow: 0 8px 25px rgba(76, 201, 240, 0.4) !important;
+}
+
+.resource-form-dialog .submit-button:disabled {
+  background: #94a3b8 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Cancel edit button */
+.resource-form-dialog .cancel-button {
+  background: #64748b !important;
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.resource-form-dialog .cancel-button:hover {
+  background: #475569 !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .resource-form-content .MuiGrid-container {
+    flex-direction: column;
+  }
+  
+  .resources-table {
+    font-size: 0.8rem;
+  }
+  
+  .resources-table .MuiTableCell-body {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .resource-form-dialog .MuiDialog-paper {
+    margin: 20px;
+    border-radius: 16px !important;
+  }
+  
+  .resource-form-dialog .form-title {
+    padding: 24px 20px 20px 20px !important;
+  }
+  
+  .resources-table .MuiTableHead-root .MuiTableCell-head {
+    font-size: 0.8rem;
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-form-dialog .MuiDialog-paper {
+    margin: 10px;
+    border-radius: 12px !important;
+  }
+  
+  .resource-form-dialog .form-title {
+    padding: 20px 16px 16px 16px !important;
+  }
+  
+  .resources-table {
+    font-size: 0.7rem;
+  }
+  
+  .edit-button,
+  .delete-button {
+    padding: 4px !important;
+    margin: 1px !important;
+  }
+}

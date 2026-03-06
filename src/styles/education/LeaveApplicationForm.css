@@ -1,0 +1,334 @@
+/* LeaveApplicationForm.css */
+.leave-form-dialog .MuiDialog-paper {
+  border-radius: 20px !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden;
+  max-width: 1400px !important;
+}
+
+.leave-form-dialog .form-title {
+  background: linear-gradient(135deg, #F77F00 0%, #D62828 100%);
+  color: white !important;
+  padding: 32px 24px 24px 24px !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+.leave-form-dialog .form-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+.leave-form-content {
+  padding: 8px 0;
+  background: white;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.leave-form-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.leave-form-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.leave-form-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #F77F00, #D62828);
+  border-radius: 3px;
+}
+
+.leave-form-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #D62828, #F77F00);
+}
+
+/* Filters Section */
+.filters-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fef3c7, #fef7cd);
+  border-radius: 16px;
+  border: 2px solid #fcd34d;
+  transition: all 0.3s ease;
+}
+
+.filters-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
+}
+
+.filter-control {
+  min-width: 220px;
+}
+
+.filter-control .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-control .MuiSelect-select {
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+/* Leave Table Styling */
+.leave-table {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #e2e8f0;
+}
+
+.leave-table .MuiTableHead-root {
+  background: linear-gradient(135deg, #F77F00, #D62828);
+}
+
+.leave-table .MuiTableHead-root .MuiTableCell-head {
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem;
+  border-bottom: none;
+  padding: 16px;
+}
+
+.leave-row {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.leave-row:hover {
+  background: linear-gradient(135deg, #fef3c7, #fef7cd) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(247, 127, 0, 0.1);
+}
+
+.leave-table .MuiTableCell-body {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 16px;
+}
+
+/* Chip Styling */
+.leave-table .MuiChip-root[data-color="success"] {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.leave-table .MuiChip-root[data-color="error"] {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+}
+
+.leave-table .MuiChip-root[data-color="warning"] {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+}
+
+.leave-table .MuiChip-root[data-color="primary"] {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.view-button {
+  color: #64748b !important;
+  background: rgba(100, 116, 139, 0.1) !important;
+  transition: all 0.3s ease !important;
+  padding: 8px !important;
+}
+
+.view-button:hover {
+  background: rgba(100, 116, 139, 0.2) !important;
+  transform: scale(1.1);
+  color: #475569 !important;
+}
+
+.approve-button {
+  color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+  transition: all 0.3s ease !important;
+  padding: 8px !important;
+}
+
+.approve-button:hover {
+  background: rgba(16, 185, 129, 0.2) !important;
+  transform: scale(1.1);
+  color: #059669 !important;
+}
+
+.reject-button {
+  color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  transition: all 0.3s ease !important;
+  padding: 8px !important;
+}
+
+.reject-button:hover {
+  background: rgba(239, 68, 68, 0.2) !important;
+  transform: scale(1.1);
+  color: #dc2626 !important;
+}
+
+/* Leave Details Card */
+.leave-details-card {
+  margin-top: 24px;
+  border-radius: 16px !important;
+  border-left: 6px solid #F77F00;
+  box-shadow: 0 8px 32px rgba(247, 127, 0, 0.15) !important;
+  background: linear-gradient(135deg, #fef7ed, #fffbeb);
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #fed7aa;
+}
+
+.details-header .MuiTypography-h6 {
+  color: #7c2d12;
+  font-weight: 700;
+}
+
+.leave-details-card .MuiCardContent-root {
+  padding: 24px;
+}
+
+.leave-details-card .MuiGrid-container {
+  margin-bottom: 16px;
+}
+
+.leave-details-card .MuiTypography-body2 {
+  color: #57534e;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.leave-details-card .MuiTypography-body1 {
+  color: #1c1917;
+  font-weight: 500;
+}
+
+/* Decision Buttons */
+.decision-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 2px solid #fed7aa;
+}
+
+.decision-buttons .approve-button {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.decision-buttons .approve-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4) !important;
+}
+
+.decision-buttons .reject-button {
+  border: 2px solid #ef4444 !important;
+  color: #ef4444 !important;
+  padding: 12px 24px !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.decision-buttons .reject-button:hover {
+  background: #ef4444 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leave-form-dialog .MuiDialog-paper {
+    margin: 20px;
+    border-radius: 16px !important;
+  }
+  
+  .leave-form-dialog .form-title {
+    padding: 24px 20px 20px 20px !important;
+  }
+  
+  .filters-section {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .filter-control {
+    min-width: auto;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .decision-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .decision-buttons .approve-button,
+  .decision-buttons .reject-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .leave-form-dialog .MuiDialog-paper {
+    margin: 10px;
+    border-radius: 12px !important;
+  }
+  
+  .leave-form-dialog .form-title {
+    padding: 20px 16px 16px 16px !important;
+  }
+  
+  .leave-table .MuiTableCell-body {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .leave-details-card .MuiCardContent-root {
+    padding: 16px;
+  }
+}

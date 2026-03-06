@@ -1,0 +1,278 @@
+/* styles/doctor/AddingDoctorForm.css */
+.doctor-form-dialog {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+.form-header {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  padding: 24px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.form-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.form-content {
+  padding: 24px;
+  background-color: #f8f9fa;
+}
+
+.step-content {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  color: #1976d2;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* Form Controls */
+.MuiTextField-root,
+.MuiFormControl-root {
+  margin-bottom: 8px;
+}
+
+.MuiInputLabel-root {
+  font-weight: 500;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #1976d2;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #1976d2;
+  border-width: 2px;
+}
+
+/* Review Cards */
+.review-card,
+.credentials-card {
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+  height: 100%;
+}
+
+.review-card:hover,
+.credentials-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.review-item {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.review-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.doctor-id {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-weight: 600;
+  color: #1976d2;
+  background-color: #f0f7ff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px dashed #1976d2;
+}
+
+.password-display {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-weight: 600;
+  color: #d32f2f;
+  background-color: #fff5f5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ffcdd2;
+}
+
+/* Form Actions */
+.form-actions {
+  padding: 20px 24px;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+.cancel-button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+.back-button {
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 500;
+  border: 1px solid #1976d2;
+  color: #1976d2;
+}
+
+.next-button,
+.submit-button {
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+}
+
+.next-button:hover,
+.submit-button:hover {
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.4);
+}
+
+.submit-button:disabled {
+  background: #ccc;
+  box-shadow: none;
+}
+
+/* Stepper Customization */
+.MuiStepper-root {
+  background: transparent;
+}
+
+.MuiStepLabel-root {
+  font-weight: 500;
+}
+
+.MuiStepIcon-root.Mui-completed {
+  color: #4caf50;
+}
+
+.MuiStepIcon-root.Mui-active {
+  color: #1976d2;
+}
+
+.MuiStepLabel-label.Mui-active {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+/* Alert Styling */
+.MuiAlert-root {
+  border-radius: 8px;
+}
+
+.MuiAlert-standardInfo {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.MuiAlert-standardWarning {
+  background-color: #fff8e1;
+  color: #ff9800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-header {
+    padding: 16px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .form-content {
+    padding: 16px;
+  }
+  
+  .form-actions {
+    padding: 16px;
+  }
+  
+  .form-actions > div {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-actions .MuiBox-root {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-form-dialog {
+    margin: 8px;
+  }
+  
+  .MuiDialogContent-root {
+    padding: 12px;
+  }
+  
+  .step-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.MuiCircularProgress-root {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Chip Styling */
+.MuiChip-root {
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.MuiChip-colorPrimary {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+}
+
+/* Input Adornment Styling */
+.MuiInputAdornment-root .MuiSvgIcon-root {
+  color: #666;
+}
+
+/* Card Content Spacing */
+.MuiCardContent-root:last-child {
+  padding-bottom: 16px;
+}
+
+.MuiCardContent-root {
+  padding: 20px;
+}

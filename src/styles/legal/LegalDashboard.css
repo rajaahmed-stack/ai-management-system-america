@@ -1,0 +1,401 @@
+/* LegalDashboard.css */
+.legal-dashboard {
+  padding: 24px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.welcome-title {
+  font-weight: 700 !important;
+  color: white !important;
+  margin-bottom: 8px !important;
+}
+
+.welcome-subtitle {
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: 500 !important;
+}
+
+.primary-button {
+  background: rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+}
+
+.primary-button:hover {
+  background: rgba(255,255,255,0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* Stats Cards */
+.stat-card {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.9) !important;
+  transition: all 0.3s ease !important;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15) !important;
+}
+
+.stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stat-number {
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+  background: linear-gradient(45deg, #2c3e50, #34495e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-title {
+  font-weight: 600 !important;
+  color: #2c3e50 !important;
+  margin-bottom: 4px !important;
+}
+
+.stat-subtitle {
+  color: #7d8fa9 !important;
+  font-weight: 500 !important;
+}
+
+.stat-icon {
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.blue {
+  background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+  color: #1976d2;
+}
+
+.stat-icon.green {
+  background: linear-gradient(45deg, #e8f5e8, #c8e6c9);
+  color: #388e3c;
+}
+
+.stat-icon.purple {
+  background: linear-gradient(45deg, #f3e5f5, #e1bee7);
+  color: #7b1fa2;
+}
+
+.stat-icon.orange {
+  background: linear-gradient(45deg, #fff3e0, #ffe0b2);
+  color: #f57c00;
+}
+
+/* Section Cards */
+.section-card {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.9) !important;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+}
+
+.view-all-button {
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  border-color: #bdc3c7 !important;
+  color: #2c3e50 !important;
+}
+
+/* Cases Table */
+.case-id {
+  font-family: 'Monaco', 'Courier New', monospace !important;
+  font-weight: 600 !important;
+  color: #2c3e50;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.client-avatar {
+  background: linear-gradient(45deg, #2c3e50, #34495e) !important;
+  font-weight: 600 !important;
+}
+
+.client-name {
+  font-weight: 600 !important;
+  color: #2c3e50;
+}
+
+.case-type {
+  color: #7d8fa9 !important;
+  font-weight: 500 !important;
+}
+
+.status-chip {
+  font-weight: 600 !important;
+}
+
+.status-chip.active {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+}
+
+.status-chip.research {
+  background: #fff3e0 !important;
+  color: #f57c00 !important;
+}
+
+.status-chip.discovery {
+  background: #f3e5f5 !important;
+  color: #7b1fa2 !important;
+}
+
+.status-chip.settlement {
+  background: #e8f5e8 !important;
+  color: #388e3c !important;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px !important;
+  border-radius: 4px !important;
+  background: #ecf0f1 !important;
+}
+
+.progress-bar .MuiLinearProgress-bar {
+  background: linear-gradient(45deg, #2c3e50, #34495e) !important;
+  border-radius: 4px;
+}
+
+.progress-text {
+  font-weight: 600 !important;
+  color: #2c3e50;
+  min-width: 40px;
+}
+
+.priority-chip {
+  font-weight: 600 !important;
+}
+
+.priority-chip.high {
+  background: #ffebee !important;
+  color: #d32f2f !important;
+}
+
+.priority-chip.medium {
+  background: #fff3e0 !important;
+  color: #f57c00 !important;
+}
+
+.priority-chip.low {
+  background: #e8f5e8 !important;
+  color: #388e3c !important;
+}
+
+/* Hearings List */
+.hearings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hearing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.hearing-item:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.hearing-date {
+  min-width: 80px;
+}
+
+.date {
+  font-weight: 700 !important;
+  color: #2c3e50;
+  margin-bottom: 2px !important;
+}
+
+.time {
+  color: #7d8fa9 !important;
+  font-weight: 500 !important;
+}
+
+.hearing-details {
+  flex: 1;
+  margin: 0 16px;
+}
+
+.case-name {
+  font-weight: 600 !important;
+  color: #2c3e50;
+  margin-bottom: 4px !important;
+}
+
+.court-info {
+  color: #7d8fa9 !important;
+}
+
+.scheduled-chip {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+  font-weight: 600 !important;
+}
+
+/* Alerts */
+.alerts-card {
+  margin-top: 24px;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.alert-item:hover {
+  transform: translateX(4px);
+}
+
+.alert-item.deadline {
+  background: #ffebee;
+  border-left-color: #d32f2f;
+}
+
+.alert-item.document {
+  background: #e3f2fd;
+  border-left-color: #1976d2;
+}
+
+.alert-item.compliance {
+  background: #fff3e0;
+  border-left-color: #f57c00;
+}
+
+.alert-icon {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.alert-item.deadline .alert-icon {
+  background: #d32f2f;
+  color: white;
+}
+
+.alert-item.document .alert-icon {
+  background: #1976d2;
+  color: white;
+}
+
+.alert-item.compliance .alert-icon {
+  background: #f57c00;
+  color: white;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-message {
+  font-weight: 600 !important;
+  color: #2c3e50;
+  margin-bottom: 4px !important;
+}
+
+.alert-case {
+  color: #7d8fa9 !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-bottom: 2px !important;
+}
+
+.days-left {
+  color: #d32f2f !important;
+  font-weight: 600 !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .legal-dashboard {
+    padding: 16px;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .hearing-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .hearing-details {
+    margin: 8px 0;
+  }
+}

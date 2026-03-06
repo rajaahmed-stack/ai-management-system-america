@@ -1,0 +1,136 @@
+.nurse-form-dialog .form-header {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 24px;
+}
+
+.nurse-form-dialog .header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nurse-form-dialog .header-text {
+  flex: 1;
+}
+
+.nurse-form-dialog .form-title {
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+}
+
+.nurse-form-dialog .form-content {
+  padding: 24px !important;
+  background-color: #f8f9fa;
+}
+
+.nurse-form-dialog .step-content {
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nurse-form-dialog .step-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px !important;
+  color: #2c3e50;
+  font-weight: 600 !important;
+}
+
+.nurse-form-dialog .review-card,
+.nurse-form-dialog .credentials-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.nurse-form-dialog .review-card:hover,
+.nurse-form-dialog .credentials-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.nurse-form-dialog .review-item {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.nurse-form-dialog .review-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.nurse-form-dialog .nurse-id,
+.nurse-form-dialog .employee-id {
+  font-family: 'Monaco', 'Consolas', monospace;
+  background-color: #fdedec;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #fadbd8;
+  font-weight: 600;
+  color: #c0392b;
+}
+
+.nurse-form-dialog .password-display {
+  font-family: 'Monaco', 'Consolas', monospace;
+  background-color: #fff3cd;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  font-weight: 600;
+}
+
+.nurse-form-dialog .form-actions {
+  padding: 16px 24px !important;
+  background-color: white;
+  border-top: 1px solid #e9ecef;
+}
+
+.nurse-form-dialog .cancel-button {
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.nurse-form-dialog .back-button {
+  border-radius: 8px;
+  padding: 8px 20px;
+}
+
+.nurse-form-dialog .next-button,
+.nurse-form-dialog .submit-button {
+  border-radius: 8px;
+  padding: 8px 24px;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3) !important;
+}
+
+.nurse-form-dialog .next-button:hover,
+.nurse-form-dialog .submit-button:hover {
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nurse-form-dialog .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .nurse-form-dialog .form-content {
+    padding: 16px !important;
+  }
+  
+  .nurse-form-dialog .form-actions {
+    padding: 12px 16px !important;
+  }
+}

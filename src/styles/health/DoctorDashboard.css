@@ -1,0 +1,198 @@
+/* --- Enhanced Global Styles with New Color Scheme --- */
+.patient-records-dashboard {
+  background: #F8F9FA;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content {
+  padding: 20px;
+  transition: margin 0.3s ease;
+}
+
+/* --- Enhanced Header --- */
+.top-header-bar {
+  background: #2E8B57 !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* --- Enhanced Cards --- */
+.stat-card, .chart-card, .ai-card, .alerts-card, .actions-card, .appointments-card {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px);
+  background: #FFFFFF !important;
+}
+
+.stat-card:hover, .chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+}
+
+/* --- Enhanced Stats --- */
+.stat-title {
+  font-weight: 600 !important;
+  color: #666;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #2E8B57 0%, #4682B4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 10px 0 !important;
+}
+
+.stat-icon {
+  opacity: 0.8;
+  font-size: 2rem !important;
+}
+
+/* --- Gender Chart Styles --- */
+.gender-chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding-top: 16px;
+}
+
+.gender-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- AI Card Special Styling --- */
+.ai-card {
+  background: linear-gradient(135deg, #2E8B57 0%, #4682B4 100%) !important;
+  color: white !important;
+}
+
+.ai-card .MuiListItemIcon-root {
+  min-width: 40px;
+}
+
+/* --- Alerts Card --- */
+.alerts-card {
+  border-left: 4px solid #FF6B35 !important;
+}
+
+/* --- Actions Card --- */
+.actions-card .MuiButton-root {
+  border-radius: 8px;
+  text-transform: none;
+  font-weight: 600;
+}
+
+/* --- Enhanced Charts --- */
+.chart-title {
+  font-weight: 700 !important;
+  color: #333;
+  font-size: 1.1rem !important;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.chart-title::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #2E8B57 0%, #4682B4 100%);
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+/* --- Recharts Tweaks --- */
+.recharts-wrapper {
+  font-size: 0.8rem;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 0.8rem;
+  fill: #555;
+}
+
+.recharts-label-list {
+  font-size: 0.8rem;
+  fill: #111;
+}
+
+.recharts-tooltip-wrapper {
+  border-radius: 4px !important;
+  border: 1px solid #f0f0f0 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff !important;
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+  background: #1A3C34 !important;
+}
+
+.sidebar .MuiListItemButton-root {
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.sidebar .MuiListItemButton-root:hover {
+  background: #2A4C44 !important;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+  .main-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
+    margin-left: 0 !important;
+  }
+  
+  .stat-value {
+    font-size: 2rem !important;
+  }
+  
+  .gender-chart-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* --- Animation Keyframes --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card, .chart-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #2E8B57 0%, #4682B4 100%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #26734d 0%, #3a6fa1 100%);
+}

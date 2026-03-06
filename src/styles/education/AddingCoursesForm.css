@@ -1,0 +1,419 @@
+/* CourseForm.css */
+.course-form-dialog .MuiDialog-paper {
+  border-radius: 20px !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden;
+}
+
+.course-form-dialog .form-title {
+  background: linear-gradient(135deg, #7209B7 0%, #560BAD 100%);
+  color: white !important;
+  padding: 32px 24px 24px 24px !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+.course-form-dialog .form-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+.course-form-content {
+  padding: 8px 0;
+  background: white;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.course-form-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.course-form-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.course-form-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7209B7, #560BAD);
+  border-radius: 3px;
+}
+
+.course-form-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #560BAD, #7209B7);
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 2px dashed #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.chips-container:focus-within {
+  border-color: #7209B7;
+  background: #faf5ff;
+}
+
+.chip {
+  background: linear-gradient(135deg, #7209B7, #560BAD) !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(114, 9, 183, 0.2);
+  transition: all 0.3s ease;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(114, 9, 183, 0.3);
+}
+
+.chip .MuiChip-deleteIcon {
+  color: white !important;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.chip .MuiChip-deleteIcon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.chip-input {
+  min-width: 180px;
+  flex: 1;
+}
+
+.chip-input .MuiOutlinedInput-root {
+  border-radius: 20px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.chip-input .MuiOutlinedInput-root:hover {
+  background: #f8fafc;
+}
+
+.chip-input .MuiOutlinedInput-root.Mui-focused {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(114, 9, 183, 0.1);
+}
+
+/* Enhanced form field styling for course form */
+.course-form-dialog .form-field .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.course-form-dialog .form-field .MuiOutlinedInput-root:hover {
+  background: #f1f5f9;
+}
+
+.course-form-dialog .form-field .MuiOutlinedInput-root.Mui-focused {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(114, 9, 183, 0.1);
+}
+
+.course-form-dialog .form-field .MuiInputLabel-root.Mui-focused {
+  color: #7209B7;
+}
+
+/* Slider customization */
+.course-form-dialog .MuiSlider-root {
+  color: #7209B7;
+}
+
+.course-form-dialog .MuiSlider-track {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.course-form-dialog .MuiSlider-rail {
+  height: 6px;
+  border-radius: 3px;
+  opacity: 0.3;
+}
+
+.course-form-dialog .MuiSlider-thumb {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #7209B7, #560BAD);
+  box-shadow: 0 2px 8px rgba(114, 9, 183, 0.3);
+}
+
+.course-form-dialog .MuiSlider-thumb:hover {
+  box-shadow: 0 4px 12px rgba(114, 9, 183, 0.4);
+}
+
+/* Switch customization */
+.course-form-dialog .MuiSwitch-switchBase.Mui-checked {
+  color: #7209B7;
+}
+
+.course-form-dialog .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background-color: #7209B7;
+}
+
+/* Submit button customization for course form */
+.course-form-dialog .submit-button {
+  background: linear-gradient(135deg, #7209B7, #560BAD) !important;
+  box-shadow: 0 4px 15px rgba(114, 9, 183, 0.3) !important;
+}
+
+.course-form-dialog .submit-button:hover {
+  box-shadow: 0 8px 25px rgba(114, 9, 183, 0.4) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-form-dialog .MuiDialog-paper {
+    margin: 20px;
+    border-radius: 16px !important;
+  }
+  
+  .course-form-dialog .form-title {
+    padding: 24px 20px 20px 20px !important;
+  }
+  
+  .chips-container {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .chip {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .chip-input {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-form-dialog .MuiDialog-paper {
+    margin: 10px;
+    border-radius: 12px !important;
+  }
+  
+  .course-form-dialog .form-title {
+    padding: 20px 16px 16px 16px !important;
+  }
+  
+  .chips-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .chip-input {
+    min-width: auto;
+  }
+  .course-form-dialog .MuiDialog-paper {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.form-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+}
+
+.form-title .MuiAvatar-root {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.course-form-content {
+  padding: 8px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.org-info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.org-info-card .MuiCardContent-root {
+  padding: 16px;
+}
+
+.section-title {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-field .MuiOutlinedInput-root {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-field .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #667eea;
+}
+
+.form-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #667eea;
+  border-width: 2px;
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  min-height: 60px;
+}
+
+.chip {
+  border-radius: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chip-input {
+  background: white;
+  border-radius: 20px;
+}
+
+.chip-input .MuiOutlinedInput-root {
+  border-radius: 20px;
+}
+
+.form-actions {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 0;
+}
+
+.cancel-button {
+  color: #6c757d;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.next-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.next-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 176, 155, 0.3);
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 176, 155, 0.4);
+}
+
+.review-card {
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Stepper customization */
+.MuiStepper-root .MuiStepLabel-root .MuiStepLabel-label {
+  font-weight: 500;
+}
+
+.MuiStepper-root .MuiStepLabel-root.Mui-active .MuiStepLabel-label {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.MuiStepper-root .MuiStepLabel-root.Mui-completed .MuiStepLabel-label {
+  color: #00b09b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .course-form-dialog .MuiDialog-paper {
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+  
+  .form-title {
+    padding: 16px;
+  }
+  
+  .chips-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .chip-input {
+    width: 100%;
+  }
+}
+
+/* Scrollbar styling */
+.course-form-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.course-form-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.course-form-content::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 3px;
+}
+
+.course-form-content::-webkit-scrollbar-thumb:hover {
+  background: #5a6fd8;
+}
+}

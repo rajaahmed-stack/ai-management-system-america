@@ -1,0 +1,440 @@
+/* --- Global Styles --- */
+.healthcare-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9faff; /* ERES light grey background */
+  font-family: 'Poppins', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* --- Sidebar --- */
+.desktop-drawer .MuiDrawer-paper {
+  width: 260px;
+  box-sizing: border-box;
+  border-right: 1px solid #f0f0f0;
+  background-color: #ffffff; /* ERES white sidebar */
+}
+
+.sidebar {
+  width: 260px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #3498db;
+
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 24px 20px;
+  /* background-color: #3498db */
+}
+
+.hospital-logo {
+  font-size: 36px !important;
+  color: #1abc9c; /* ERES green */
+  margin-right: 12px;
+}
+
+.hospital-name {
+  font-weight: 700 !important;
+  color: #2c3e50;
+  font-size: 1.75rem !important;
+}
+
+.menu-title {
+  padding: 8px 20px;
+  color: #95a5a6;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.8rem !important;
+}
+
+.nav-list {
+  padding: 0 16px;
+}
+
+.nav-item {
+  border-radius: 10px;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item .nav-icon {
+  color: #7f8c8d;
+  min-width: 44px;
+}
+
+.nav-item .MuiListItemText-primary {
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background-color: #f0fcf9;
+}
+
+.nav-item:hover .nav-icon,
+.nav-item:hover .MuiListItemText-primary {
+  color: #1abc9c;
+}
+
+.nav-item.active {
+  background-color: #1abc9c; /* ERES green active state */
+  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+}
+
+.nav-item.active .nav-icon,
+.nav-item.active .MuiListItemText-primary {
+  color: #ffffff;
+}
+
+/* Sidebar Schedule Card */
+.schedule-card {
+  margin: auto 16px 16px 16px;
+  border-radius: 12px;
+  background-color: #f0fcf9;
+  border: 1px solid #e0f6f1;
+  box-shadow: none;
+  text-align: center;
+}
+
+.schedule-button {
+  background-color: #1abc9c !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+}
+.schedule-button:hover {
+  background-color: #16a085 !important;
+}
+
+/* --- Main Content --- */
+.main-content {
+  flex-grow: 1;
+  padding: 24px 32px;
+  background-color: #f9faff;
+  /* No margin-left, as the drawer is permanent */
+}
+
+/* Main Header (inside content) */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.welcome-title {
+  font-weight: 700 !important;
+  color: #2c3e50;
+}
+
+.welcome-subtitle {
+  color: #7f8c8d;
+  font-weight: 400;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-bar .MuiOutlinedInput-root {
+  border-radius: 20px;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.search-bar .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #f0f0f0;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-name {
+  font-weight: 600 !important;
+  color: #34495e;
+}
+
+.profile-role {
+  color: #95a5a6;
+}
+
+/* --- Stat Cards --- */
+.quick-stats-grid {
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  border: none;
+  height: 100%;
+}
+
+.stat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px !important;
+}
+
+.stat-value {
+  font-weight: 700 !important;
+  color: #2c3e50;
+  font-size: 2.25rem !important;
+  line-height: 1.2;
+}
+
+.stat-title {
+  color: #7f8c8d;
+  font-weight: 500;
+  margin-bottom: 8px !important;
+}
+
+.stat-icon-wrapper {
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon-wrapper .MuiSvgIcon-root {
+  font-size: 2rem;
+}
+
+.trend-positive {
+  background-color: #e8f8f5 !important;
+  color: #1abc9c !important;
+}
+.trend-positive .MuiSvgIcon-root {
+  font-size: 1rem;
+  color: #1abc9c !important;
+}
+
+.trend-negative {
+  background-color: #fdeaea !important;
+  color: #e74c3c !important;
+}
+.trend-negative .MuiSvgIcon-root {
+  font-size: 1rem;
+  color: #e74c3c !important;
+}
+
+/* --- Chart Cards --- */
+.chart-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  border: none;
+  height: 100%;
+}
+
+.chart-title {
+  font-weight: 600 !important;
+  color: #2c3e50;
+  margin-bottom: 16px !important;
+}
+
+/* --- Donut Chart Legend --- */
+.pie-legend {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* --- Recent Patient List --- */
+.status-chip {
+  font-weight: 500 !important;
+  font-size: 0.75rem !important;
+}
+
+.status-chip.in-recovery {
+  background-color: #e8f4fd !important;
+  color: #3498db !important;
+}
+.status-chip.pending {
+  background-color: #fef9e7 !important;
+  color: #f39c12 !important;
+}
+.status-chip.recovered {
+  background-color: #e8f8f5 !important;
+  color: #1abc9c !important;
+}
+.status-chip.on-treatment {
+  background-color: #f5eef8 !important;
+  color: #9b59b6 !important;
+}
+
+/* Recharts Customization */
+.recharts-legend-item {
+  font-size: 0.9rem;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 0.8rem;
+  fill: #7f8c8d;
+}
+
+.recharts-tooltip-wrapper {
+  border-radius: 8px !important;
+  border: 1px solid #f0f0f0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Add these styles to your existing HealthcareDashboard.css */
+
+/* Section Styles */
+.doctors-section,
+.appointments-section,
+.departments-section,
+.patients-section,
+.settings-section {
+  padding: 20px 0;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+/* Add Doctor Button */
+.add-doctor-button {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: none;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+  transition: all 0.3s ease;
+}
+
+.add-doctor-button:hover {
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Navigation Active State Enhancement */
+.nav-item.active {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  border-radius: 8px;
+  margin: 4px 8px;
+}
+
+.nav-item.active .nav-icon {
+  color: white;
+}
+
+.nav-item.active .MuiListItemText-primary {
+  color: white;
+  font-weight: 600;
+}
+
+.nav-item {
+  border-radius: 8px;
+  margin: 4px 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Main Content Transitions */
+.main-content {
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design for Sections */
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .add-doctor-button {
+    width: 100%;
+  }
+  
+  .doctors-section,
+  .appointments-section,
+  .departments-section,
+  .patients-section,
+  .settings-section {
+    padding: 16px 0;
+  }
+}
+
+/* Card enhancements for section content */
+.doctors-section .MuiCard-root,
+.appointments-section .MuiCard-root,
+.departments-section .MuiCard-root,
+.patients-section .MuiCard-root,
+.settings-section .MuiCard-root {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+/* Welcome message adjustment for different sections */
+.welcome-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+/* Add these styles to your existing CSS */
+.doctors-section {
+  padding: 20px 0;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.doctors-table .MuiTableHead-root {
+  background-color: #f8f9fa;
+}
+
+.doctors-table .MuiTableCell-head {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}

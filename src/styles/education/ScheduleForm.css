@@ -1,0 +1,188 @@
+/* ScheduleForm.css */
+.schedule-form-dialog .MuiDialog-paper {
+  border-radius: 20px !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden;
+}
+
+.schedule-form-dialog .form-title {
+  background: linear-gradient(135deg, #F72585 0%, #B5179E 100%);
+  color: white !important;
+  padding: 32px 24px 24px 24px !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+.schedule-form-dialog .form-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+.schedule-form-content {
+  padding: 8px 0;
+  background: white;
+}
+
+.conflict-check {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-radius: 12px;
+  border: 2px solid #bbf7d0;
+  margin: 16px 0;
+  transition: all 0.3s ease;
+}
+
+.conflict-check:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+.conflict-check .MuiButton-root {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.conflict-check .MuiButton-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Enhanced radio buttons */
+.schedule-form-dialog .MuiRadio-root {
+  color: #94a3b8 !important;
+  transition: all 0.3s ease !important;
+}
+
+.schedule-form-dialog .MuiRadio-root.Mui-checked {
+  color: #F72585 !important;
+  transform: scale(1.1);
+}
+
+.schedule-form-dialog .MuiRadio-root:hover {
+  background: rgba(247, 37, 133, 0.1) !important;
+}
+
+/* Time input styling */
+.schedule-form-dialog .form-field input[type="time"] {
+  padding: 16px 14px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.schedule-form-dialog .form-field input[type="date"] {
+  padding: 16px 14px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Enhanced select styling */
+.schedule-form-dialog .MuiSelect-select {
+  padding: 16px 14px !important;
+  font-weight: 500;
+}
+
+.schedule-form-dialog .MuiSelect-icon {
+  color: #F72585;
+}
+
+/* Form field focus states */
+.schedule-form-dialog .form-field .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.schedule-form-dialog .form-field .MuiOutlinedInput-root:hover {
+  background: #f1f5f9;
+}
+
+.schedule-form-dialog .form-field .MuiOutlinedInput-root.Mui-focused {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(247, 37, 133, 0.1);
+}
+
+.schedule-form-dialog .form-field .MuiInputLabel-root.Mui-focused {
+  color: #F72585;
+}
+
+/* Switch customization */
+.schedule-form-dialog .MuiSwitch-switchBase.Mui-checked {
+  color: #F72585;
+}
+
+.schedule-form-dialog .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background-color: #F72585;
+}
+
+/* Submit button customization */
+.schedule-form-dialog .submit-button {
+  background: linear-gradient(135deg, #F72585, #B5179E) !important;
+  box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3) !important;
+}
+
+.schedule-form-dialog .submit-button:hover {
+  box-shadow: 0 8px 25px rgba(247, 37, 133, 0.4) !important;
+}
+
+/* Section title enhancement */
+.schedule-form-dialog .section-title {
+  background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+  border-left: 4px solid #F72585;
+  color: #831843 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedule-form-dialog .MuiDialog-paper {
+    margin: 20px;
+    border-radius: 16px !important;
+  }
+  
+  .schedule-form-dialog .form-title {
+    padding: 24px 20px 20px 20px !important;
+  }
+  
+  .conflict-check {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 16px;
+  }
+  
+  .conflict-check .MuiButton-root {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-form-dialog .MuiDialog-paper {
+    margin: 10px;
+    border-radius: 12px !important;
+  }
+  
+  .schedule-form-dialog .form-title {
+    padding: 20px 16px 16px 16px !important;
+  }
+  
+  .schedule-form-dialog .MuiSelect-select {
+    padding: 14px 12px !important;
+  }
+  
+  .schedule-form-dialog .form-field input[type="time"],
+  .schedule-form-dialog .form-field input[type="date"] {
+    padding: 14px 12px;
+  }
+}

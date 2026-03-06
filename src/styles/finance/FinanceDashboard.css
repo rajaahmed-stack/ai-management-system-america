@@ -1,0 +1,1056 @@
+/* FinanceDashboard.css */
+.finance-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.finance-dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.03)" points="0,1000 1000,0 1000,1000"/></svg>');
+  pointer-events: none;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .MuiDrawer-paper {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 24px 24px 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px 16px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.app-name {
+  font-weight: 800 !important;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2 !important;
+}
+
+.app-tagline {
+  color: #6c757d !important;
+  font-weight: 500 !important;
+}
+
+.menu-toggle {
+  color: #667eea !important;
+}
+
+.sidebar-menu {
+  padding: 16px 8px !important;
+}
+
+.menu-item {
+  border-radius: 12px !important;
+  margin: 4px 8px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white !important;
+}
+
+.menu-item.active .menu-icon {
+  color: white !important;
+}
+
+.menu-item:hover:not(.active) {
+  background: rgba(102, 126, 234, 0.1) !important;
+}
+
+.menu-icon {
+  min-width: 48px !important;
+  color: #6c757d;
+}
+
+.menu-item.active .menu-icon {
+  color: white !important;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 8px !important;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  transition: margin-left 0.3s ease;
+  margin-left: 280px;
+}
+
+.main-content.sidebar-closed {
+  margin-left: 0;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 20px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.welcome-title {
+  font-weight: 800 !important;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px !important;
+}
+
+.welcome-subtitle {
+  color: black;
+  font-weight: 500 !important;
+  background: red;
+  
+}
+
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-button {
+  border-radius: 12px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+}
+
+.primary-button {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+}
+
+.ai-assistant {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white !important;
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* AI Insights Banner */
+.ai-insights-banner {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white !important;
+  margin-bottom: 24px;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
+}
+
+.insights-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.insight-icon {
+  font-size: 2.5rem !important;
+  opacity: 0.9;
+}
+
+.insights-content {
+  flex: 1;
+}
+
+.insights-content h6 {
+  color: white;
+  margin-bottom: 4px !important;
+  font-weight: 700 !important;
+}
+
+.insights-content .MuiTypography-body2 {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500 !important;
+}
+
+/* Stats Grid */
+.stats-grid {
+  margin-bottom: 24px !important;
+}
+
+.stat-card {
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15) !important;
+}
+
+.stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 4px;
+}
+
+.stat-main {
+  flex: 1;
+}
+
+.stat-number {
+  font-weight: 900 !important;
+  margin-bottom: 8px !important;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem !important;
+  line-height: 1 !important;
+}
+
+.stat-title {
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+  margin-bottom: 4px !important;
+}
+
+.stat-subtitle {
+  color: #6c757d !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+}
+
+.trend-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.trend-icon {
+  font-size: 1.2rem !important;
+}
+
+.trend-value {
+  font-weight: 700 !important;
+}
+
+.trend-value.up {
+  color: #10b981 !important;
+}
+
+.trend-value.down {
+  color: #ef4444 !important;
+}
+
+.stat-icon {
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+}
+
+.stat-icon.gold {
+  background: linear-gradient(45deg, #fff8e1, #ffecb3);
+  color: #f59e0b;
+}
+
+.stat-icon.green {
+  background: linear-gradient(45deg, #d1fae5, #a7f3d0);
+  color: #10b981;
+}
+
+.stat-icon.blue {
+  background: linear-gradient(45deg, #dbeafe, #93c5fd);
+  color: #3b82f6;
+}
+
+.stat-icon.red {
+  background: linear-gradient(45deg, #fee2e2, #fca5a5);
+  color: #ef4444;
+}
+
+/* Charts */
+.charts-grid {
+  margin-bottom: 24px !important;
+}
+
+.chart-container {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-title {
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+  margin-bottom: 16px !important;
+}
+
+.chart-placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  color: #64748b;
+}
+
+.chart-icon {
+  font-size: 4rem !important;
+  margin-bottom: 16px !important;
+  color: #667eea;
+}
+
+/* Section Cards */
+.section-card {
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+}
+
+.view-all-button {
+  border-radius: 12px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  border-color: #cbd5e1 !important;
+  color: #64748b !important;
+}
+
+/* Tables */
+.table-row {
+  transition: background-color 0.2s ease !important;
+}
+
+.table-row:hover {
+  background-color: #f8fafc !important;
+}
+
+.transaction-id {
+  font-family: 'Monaco', 'Courier New', monospace !important;
+  font-weight: 700 !important;
+  color: #667eea;
+  font-size: 0.75rem !important;
+}
+
+.account-name {
+  font-weight: 600 !important;
+  color: #2c3e50;
+}
+
+.amount {
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+}
+
+.amount.positive {
+  color: #10b981;
+}
+
+.amount.negative {
+  color: #ef4444;
+}
+
+.category-chip {
+  background: #e2e8f0 !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+}
+
+.status-chip {
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+}
+
+.status-chip.completed {
+  background: #d1fae5 !important;
+  color: #065f46 !important;
+}
+
+.status-chip.pending {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.date {
+  color: #64748b !important;
+  font-weight: 500 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Investment Cards */
+.investment-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.investment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.investment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.investment-name {
+  font-weight: 700 !important;
+  color: #2c3e50;
+  margin-bottom: 4px !important;
+}
+
+.risk-chip {
+  font-weight: 700 !important;
+  font-size: 0.6rem !important;
+}
+
+.risk-chip.low {
+  background: #d1fae5 !important;
+  color: #065f46 !important;
+}
+
+.risk-chip.medium {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.risk-chip.high {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+}
+
+.investment-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.investment-value {
+  font-weight: 800 !important;
+  color: #1e293b;
+  font-size: 1.1rem !important;
+}
+
+.return {
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+}
+
+.return.positive {
+  color: #10b981;
+}
+
+.return.negative {
+  color: #ef4444;
+}
+
+.allocation-bar {
+  margin-top: 8px;
+}
+
+.allocation-progress {
+  height: 6px !important;
+  border-radius: 3px;
+  margin-bottom: 4px;
+  background: #e2e8f0 !important;
+}
+
+.allocation-progress .MuiLinearProgress-bar {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+}
+
+.allocation-text {
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+/* Alerts & Insights */
+.alerts-card, .insights-card, .quick-actions-card {
+  margin-bottom: 24px;
+}
+
+.alert-header-icon, .insights-header-icon {
+  color: #667eea;
+}
+
+.alerts-list, .insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.alert-item:hover {
+  transform: translateX(4px);
+}
+
+.alert-item.fraud {
+  background: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+.alert-item.compliance {
+  background: #fffbeb;
+  border-left-color: #f59e0b;
+}
+
+.alert-item.market {
+  background: #eff6ff;
+  border-left-color: #3b82f6;
+}
+
+.alert-item.opportunity {
+  background: #f0fdf4;
+  border-left-color: #10b981;
+}
+
+.alert-icon {
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+.alert-item.fraud .alert-icon {
+  background: #ef4444;
+  color: white;
+}
+
+.alert-item.compliance .alert-icon {
+  background: #f59e0b;
+  color: white;
+}
+
+.alert-item.market .alert-icon {
+  background: #3b82f6;
+  color: white;
+}
+
+.alert-item.opportunity .alert-icon {
+  background: #10b981;
+  color: white;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-message {
+  font-weight: 600 !important;
+  color: #1e293b;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+}
+
+.alert-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priority-chip {
+  font-weight: 700 !important;
+  font-size: 0.6rem !important;
+}
+
+.priority-chip.high {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+}
+
+.priority-chip.medium {
+  background: #fef3c7 !important;
+  color: #d97706 !important;
+}
+
+.priority-chip.low {
+  background: #dbeafe !important;
+  color: #2563eb !important;
+}
+
+.alert-time {
+  color: #64748b !important;
+  font-weight: 500 !important;
+}
+
+/* Insights */
+.insight-item {
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  margin-bottom: 8px;
+}
+
+.insight-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.insight-message {
+  font-weight: 500 !important;
+  color: #374151;
+  line-height: 1.4 !important;
+  flex: 1;
+}
+
+.confidence-chip {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 0.6rem !important;
+}
+
+/* Quick Actions */
+.quick-actions {
+  margin-top: 8px;
+}
+
+.quick-action-button {
+  border-radius: 12px !important;
+  padding: 12px 8px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+  transition: all 0.3s ease !important;
+}
+
+.quick-action-button:hover {
+  border-color: #667eea !important;
+  color: #667eea !important;
+  transform: translateY(-2px);
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.loading-content {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 48px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.loading-logo {
+  width: 80px !important;
+  height: 80px !important;
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  margin: 0 auto 24px !important;
+}
+
+.loading-text {
+  font-weight: 700 !important;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px !important;
+}
+
+.loading-progress {
+  height: 8px !important;
+  border-radius: 4px;
+  background: #e2e8f0 !important;
+}
+
+.loading-progress .MuiLinearProgress-bar {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 240px;
+  }
+  
+  .sidebar .MuiDrawer-paper {
+    width: 240px;
+  }
+  
+  .main-content {
+    margin-left: 240px;
+  }
+  
+  .stat-number {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .finance-dashboard {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+  
+  .sidebar .MuiDrawer-paper {
+    width: 100%;
+    border-radius: 0;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .stat-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stat-icon {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+  
+  .investment-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .alert-meta {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-card, .section-card, .chart-container {
+  animation: fadeInUp 0.6s ease;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #5a6fd8, #6a42a0);
+}
+/* Add these styles to your existing FinanceDashboard.css */
+
+/* User Management Section */
+.user-management-section {
+  padding: 24px;
+}
+
+.user-management-section .section-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.user-management-section .section-title {
+  font-weight: 800 !important;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px !important;
+}
+
+.user-management-section .section-subtitle {
+  color: #64748b !important;
+  font-weight: 500 !important;
+}
+
+/* Management Cards */
+.management-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+  height: 100%;
+}
+
+.management-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card-avatar {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.add-employee-button,
+.add-department-button {
+  border-radius: 12px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 12px 24px !important;
+  margin-top: 16px !important;
+}
+
+.add-employee-button {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+.add-department-button {
+  border-color: #667eea !important;
+  color: #667eea !important;
+}
+
+/* Employees List Card */
+.employees-list-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  margin-top: 24px;
+}
+
+/* Employee Item Cards */
+.employee-item-card {
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+}
+
+.employee-item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border-color: #667eea !important;
+}
+
+.employee-item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.employee-avatar-small {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  font-weight: 600 !important;
+}
+
+.employee-name {
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  margin-bottom: 2px !important;
+}
+
+.employee-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.risk-chip-small {
+  font-weight: 600 !important;
+  font-size: 0.6rem !important;
+}
+
+.risk-chip-small.low {
+  background: #d1fae5 !important;
+  color: #065f46 !important;
+}
+
+.risk-chip-small.medium {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.risk-chip-small.high {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+}
+
+.employee-salary {
+  font-weight: 700 !important;
+  color: #059669 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Enhanced button hover effects */
+.add-employee-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.add-department-button:hover {
+  background: rgba(102, 126, 234, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+/* Responsive design for user management */
+@media (max-width: 768px) {
+  .user-management-section {
+    padding: 16px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .employee-item-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .employee-details {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+}

@@ -1,0 +1,623 @@
+/* EducationDashboard.css */
+.admin-main-content {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  padding: 0 !important;
+}
+
+.admin-top-bar {
+  background: linear-gradient(90deg, #1e3a8a 0%, #3730a3 100%) !important;
+  border-radius: 0 0 20px 20px !important;
+  margin-bottom: 0 !important;
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15) !important;
+  padding: 0 24px;
+}
+
+.admin-dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 32px;
+  border-radius: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.welcome-title {
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+  font-size: 2.75rem !important;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-subtitle {
+  opacity: 0.95;
+  margin-bottom: 20px !important;
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  position: relative;
+}
+
+/* Stats Grid */
+.stats-grid {
+  margin-bottom: 32px;
+}
+
+/* Stat Cards */
+.admin-stat-card {
+  background: white !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--stat-color, #4361EE), var(--stat-color-secondary, #3A0CA3));
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--stat-color, #4361EE);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+  transition: all 0.3s ease;
+}
+
+.admin-stat-card:hover .stat-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.stat-icon .MuiSvgIcon-root {
+  color: white;
+  font-size: 28px;
+}
+
+.stat-value {
+  font-weight: 800 !important;
+  font-size: 2.5rem !important;
+  margin-bottom: 8px !important;
+  background: linear-gradient(135deg, #1e3a8a, #3730a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  color: #64748b !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+}
+
+.stat-change {
+  font-weight: 700 !important;
+  border-radius: 20px !important;
+  padding: 6px 12px !important;
+}
+
+/* Quick Actions */
+.quick-actions-card {
+  background: white !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.quick-actions-card .MuiCardContent-root {
+  padding: 32px !important;
+}
+
+.quick-actions-card .MuiTypography-h6 {
+  background: linear-gradient(135deg, #1e3a8a, #3730a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 8px !important;
+}
+
+.action-button {
+  padding: 16px 20px !important;
+  border-radius: 16px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.action-button:hover::before {
+  left: 100%;
+}
+
+.action-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, #4361EE, #3A0CA3) !important;
+  color: white !important;
+}
+
+.action-button.secondary {
+  background: linear-gradient(135deg, #7209B7, #560BAD) !important;
+  color: white !important;
+}
+
+.action-button.tertiary {
+  background: linear-gradient(135deg, #F72585, #B5179E) !important;
+  color: white !important;
+}
+
+.action-button.quaternary {
+  background: linear-gradient(135deg, #4CC9F0, #4895EF) !important;
+  color: white !important;
+}
+
+.action-button.warning {
+  background: linear-gradient(135deg, #F77F00, #D62828) !important;
+  color: white !important;
+}
+
+/* Activity Card */
+.activity-card {
+  background: white !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 100%;
+  overflow: hidden;
+}
+
+.activity-card .MuiCardContent-root {
+  padding: 32px !important;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.card-header .MuiTypography-h6 {
+  background: linear-gradient(135deg, #1e3a8a, #3730a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 16px;
+  border-left: 4px solid;
+  border-color: var(--activity-color, #4361EE);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.activity-item:hover {
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.activity-icon {
+  margin-top: 2px;
+  padding: 8px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-action {
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+  color: #1e293b;
+  font-size: 0.95rem !important;
+}
+
+.activity-time {
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+}
+
+/* System Overview */
+.system-overview-card {
+  background: white !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 100%;
+  overflow: hidden;
+}
+
+.system-overview-card .MuiCardContent-root {
+  padding: 32px !important;
+}
+
+.system-overview-card .MuiTypography-h6 {
+  background: linear-gradient(135deg, #1e3a8a, #3730a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+  margin-bottom: 24px !important;
+}
+
+.system-metric {
+  margin-bottom: 28px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.system-metric:hover {
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  transform: translateX(4px);
+}
+
+.system-metric:last-child {
+  margin-bottom: 0;
+}
+
+.system-metric .MuiTypography-body2 {
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.system-metric .MuiTypography-caption {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Buttons */
+.primary-button {
+  background: linear-gradient(135deg, #4361EE, #3A0CA3) !important;
+  color: white !important;
+  border-radius: 16px !important;
+  padding: 14px 32px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(67, 97, 238, 0.4) !important;
+}
+
+.secondary-button {
+  border: 2px solid #4361EE !important;
+  color: #4361EE !important;
+  border-radius: 16px !important;
+  padding: 14px 32px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.secondary-button:hover {
+  background: #4361EE !important;
+  color: white !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3) !important;
+}
+
+.text-button {
+  color: #4361EE !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  padding: 8px 16px !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.text-button:hover {
+  background: rgba(67, 97, 238, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+/* Management Page Styles */
+.management-content-card {
+  background: white !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+}
+
+.management-content-card .MuiTypography-h4 {
+  background: linear-gradient(135deg, #1e3a8a, #3730a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Custom scrollbar for the main content */
+.admin-main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-main-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.admin-main-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4361EE, #3A0CA3);
+  border-radius: 4px;
+}
+
+.admin-main-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #3A0CA3, #4361EE);
+}
+
+/* Animation for page transitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-dashboard > * {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .admin-dashboard {
+    padding: 20px;
+  }
+  
+  .welcome-section {
+    padding: 32px 24px;
+  }
+  
+  .welcome-title {
+    font-size: 2.25rem !important;
+  }
+  
+  .action-button {
+    padding: 14px 16px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 16px;
+  }
+  
+  .welcome-section {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+  
+  .welcome-title {
+    font-size: 2rem !important;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.1rem !important;
+  }
+  
+  .stat-value {
+    font-size: 2rem !important;
+  }
+  
+  .action-button {
+    padding: 12px 14px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    padding: 12px 24px !important;
+  }
+  
+  .activity-card .MuiCardContent-root,
+  .system-overview-card .MuiCardContent-root,
+  .quick-actions-card .MuiCardContent-root {
+    padding: 24px !important;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-dashboard {
+    padding: 12px;
+  }
+  
+  .welcome-section {
+    padding: 20px 16px;
+    border-radius: 16px;
+    text-align: center;
+  }
+  
+  .welcome-title {
+    font-size: 1.75rem !important;
+  }
+  
+  .stat-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .activity-item {
+    padding: 16px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .activity-content {
+    text-align: center;
+  }
+  
+  .system-metric {
+    padding: 12px;
+  }
+  
+  .admin-top-bar {
+    padding: 0 16px;
+  }
+  
+  .management-content-card {
+    padding: 16px !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .admin-top-bar,
+  .welcome-section,
+  .quick-actions-card,
+  .activity-card,
+  .system-overview-card {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  
+  .action-button,
+  .primary-button,
+  .secondary-button,
+  .text-button {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .admin-stat-card,
+  .activity-card,
+  .system-overview-card,
+  .quick-actions-card {
+    border: 2px solid #1e293b !important;
+  }
+  
+  .stat-value {
+    -webkit-text-fill-color: #1e293b !important;
+    background: none !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .admin-stat-card,
+  .action-button,
+  .activity-item,
+  .system-metric,
+  .primary-button,
+  .secondary-button,
+  .text-button {
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  .action-button::before {
+    display: none;
+  }
+  
+  .admin-dashboard > * {
+    animation: none;
+  }
+}
