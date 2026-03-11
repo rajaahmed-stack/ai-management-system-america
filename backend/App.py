@@ -1,6 +1,11 @@
+import sys
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime
+
+# Add the directory containing this file to sys.path so that 'config' can be found
+sys.path.insert(0, os.path.dirname(__file__))
 
 app = Flask(__name__)
 CORS(app)
@@ -133,7 +138,7 @@ def register_routes():
     
     print("✅ Routes registered successfully")
 
-# ✅ Call register_routes() here so routes are available when Gunicorn imports the app
+# Register routes so they are available when Gunicorn imports the app
 register_routes()
 
 if __name__ == '__main__':
