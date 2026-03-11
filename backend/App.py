@@ -145,6 +145,33 @@ register_routes()
 # Initialize OpenAI client with your API key from environment variables
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
+# @app.route('/api/ai/ask', methods=['POST'])
+# def ask_ai():
+#     data = request.get_json()
+#     prompt = data.get('prompt') if data else None
+#     if not prompt:
+#         return jsonify({'error': 'Missing prompt'}), 400
+
+#     # Check if OpenAI client is available
+#     if client is None:
+#         return jsonify({'error': 'AI service not configured'}), 503
+
+#     try:
+#         completion = client.chat.completions.create(
+#             model="gpt-3.5-turbo",
+#             messages=[{"role": "user", "content": prompt}],
+#             max_tokens=500
+#         )
+#         response = completion.choices[0].message.content
+#         return jsonify({'response': response})
+#     except Exception as e:
+#         # Log the full exception
+#         import traceback
+#         print("❌ OpenAI API error:", str(e))
+#         traceback.print_exc()
+#         return jsonify({'error': 'AI request failed: ' + str(e)}), 500
+
+
 @app.route('/api/ai/ask', methods=['POST'])
 def ask_ai():
     data = request.get_json()
@@ -152,25 +179,32 @@ def ask_ai():
     if not prompt:
         return jsonify({'error': 'Missing prompt'}), 400
 
-    # Check if OpenAI client is available
-    if client is None:
-        return jsonify({'error': 'AI service not configured'}), 503
+    # Log the received prompt (visible in Render logs)
+    print(f"✅ Received prompt: {prompt}")
 
-    try:
-        completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=500
-        )
-        response = completion.choices[0].message.content
-        return jsonify({'response': response})
-    except Exception as e:
-        # Log the full exception
-        import traceback
-        print("❌ OpenAI API error:", str(e))
-        traceback.print_exc()
-        return jsonify({'error': 'AI request failed: ' + str(e)}), 500
+    # --- MOCK RESPONSE – remove this block when real API key is ready ---
+    import time
+    time.sleep(1)  # simulate processing delay
+    mock_reply = f"This is a simulated AI response. You asked: '{prompt}'"
+    return jsonify({'response': mock_reply})
+    # --------------------------------------------------------------------
 
+    # --- REAL OpenAI CODE (commented out for now) ---
+    # if client is None:
+    #     return jsonify({'error': 'AI service not configured'}), 503
+    # try:
+    #     completion = client.chat.completions.create(
+    #         model="gpt-3.5-turbo",
+    #         messages=[{"role": "user", "content": prompt}],
+    #         max_tokens=500
+    #     )
+    #     response = completion.choices[0].message.content
+    #     return jsonify({'response': response})
+    # except Exception as e:
+    #     import traceback
+    #     print("❌ OpenAI API error:", str(e))
+    #     traceback.print_exc()
+    #     return jsonify({'error': 'AI request failed: ' + str(e)}), 500
 if __name__ == '__main__':
     print("🚀 Starting Nexus AI Multi-Industry Platform...")
     print("📊 Connected to: nexus-ai-app-e1df1 Firebase Project")
