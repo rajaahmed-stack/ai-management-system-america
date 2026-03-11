@@ -133,10 +133,10 @@ def register_routes():
     
     print("✅ Routes registered successfully")
 
+# ✅ Call register_routes() here so routes are available when Gunicorn imports the app
+register_routes()
+
 if __name__ == '__main__':
-    # Register routes before running
-    register_routes()
-    
     print("🚀 Starting Nexus AI Multi-Industry Platform...")
     print("📊 Connected to: nexus-ai-app-e1df1 Firebase Project")
     print("🔗 API Server: http://localhost:5000")

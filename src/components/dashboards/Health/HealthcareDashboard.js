@@ -684,7 +684,7 @@ const HealthcareDashboard = () => {
                         {filteredDoctors.length === 0 ? (
                           <Box className="empty-state">
                             <Box className="empty-icon" style={{ background: GRADIENTS.primary }}>
-                              <MedicalServices sx={{ fontSize: 36, color: '#fff' }} />
+                              <MedicalServices sx={{ fontSize: 36, color: '#131212' }} />
                             </Box>
                             <Typography className="empty-title">No doctors found</Typography>
                             <Typography className="empty-desc">Add your first doctor to get started</Typography>
