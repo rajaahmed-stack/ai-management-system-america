@@ -148,21 +148,28 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 @app.route('/api/ai/ask', methods=['POST'])
 def ask_ai():
     data = request.get_json()
-    prompt = data.get('prompt')
+    prompt = data.get('prompt') if data else None
     if not prompt:
         return jsonify({'error': 'Missing prompt'}), 400
 
+    # Check if OpenAI client is available
+    if client is None:
+        return jsonify({'error': 'AI service not configured'}), 503
+
     try:
         completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",  # or "gpt-4"
+            model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}],
             max_tokens=500
         )
         response = completion.choices[0].message.content
         return jsonify({'response': response})
     except Exception as e:
-        print(f"OpenAI error: {e}")
-        return jsonify({'error': 'AI request failed'}), 500
+        # Log the full exception
+        import traceback
+        print("❌ OpenAI API error:", str(e))
+        traceback.print_exc()
+        return jsonify({'error': 'AI request failed: ' + str(e)}), 500
 
 if __name__ == '__main__':
     print("🚀 Starting Nexus AI Multi-Industry Platform...")
