@@ -15,7 +15,7 @@ import {
   ArrowUpward, ArrowDownward, PersonAdd, Edit, Delete, Visibility,
   Email, Phone, Bed, Group, Logout, Menu as MenuIcon,
   TrendingUp, MoreVert, FilterList, Refresh, Star,
-  AccessTime, CheckCircle, Schedule, KeyboardArrowRight,
+  AccessTime, CheckCircle, Schedule, KeyboardArrowRight, Send as SendIcon,
 } from '@mui/icons-material';
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip as ReTooltip,
@@ -56,30 +56,57 @@ const GRADIENTS = {
 };
 
 // ─── StatCard ────────────────────────────────────────────────────────────────
-const StatCard = ({ title, value, trend, icon, gradient, subtitle, delay }) => (
-  <Fade in timeout={600} style={{ transitionDelay: `${delay}ms` }}>
-    <Box className="stat-card-wrapper">
-      <Card className="stat-card">
-        <CardContent className="stat-card-content">
-          <Box className="stat-icon-orb" style={{ background: gradient }}>
-            {React.cloneElement(icon, { className: 'stat-icon', style: { color: '#fff' } })}
-            <Box className="orb-ripple" style={{ background: gradient }} />
-          </Box>
-          <Box className="stat-body">
-            <Typography className="stat-label">{title}</Typography>
-            <Typography className="stat-number">{value}</Typography>
-            {subtitle && <Typography className="stat-subtitle">{subtitle}</Typography>}
-          </Box>
-          <Box className={`stat-trend ${trend >= 0 ? 'trend-up' : 'trend-down'}`}>
-            {trend >= 0 ? <ArrowUpward sx={{ fontSize: 12 }} /> : <ArrowDownward sx={{ fontSize: 12 }} />}
-            <span>{Math.abs(trend)}%</span>
-          </Box>
-          <Box className="stat-bottom-bar" style={{ background: gradient }} />
-        </CardContent>
-      </Card>
-    </Box>
-  </Fade>
-);
+const StatCard = ({ title, value, trend, icon, gradient, subtitle, delay }) => {
+  const isPositive = trend >= 0;
+  const TrendIcon = isPositive ? ArrowUpward : ArrowDownward;
+
+  return (
+    <Fade in timeout={600} style={{ transitionDelay: `${delay}ms` }}>
+      <Box className="h-full">
+        <Card
+          className="!bg-[#1E293B] !border !border-white/10 !rounded-2xl !shadow-lg 
+                     hover:shadow-xl hover:!border-purple-500/30 hover:-translate-y-1 
+                     transition-all duration-300 relative overflow-hidden cursor-default"
+        >
+          <CardContent className="!p-6">
+            <Box className="flex items-center justify-between mb-4">
+              <Box
+                className="w-12 h-12 rounded-xl flex items-center justify-center"
+                style={{ background: gradient }}
+              >
+                {React.cloneElement(icon, { className: 'text-white text-2xl' })}
+              </Box>
+              <Typography className="!text-white/60 !text-sm !font-medium !tracking-wide">
+                {title}
+              </Typography>
+            </Box>
+
+            <Box className="flex items-end justify-between mb-1">
+              <Typography className="!text-white !text-4xl !font-bold !leading-none">
+                {value}
+              </Typography>
+              <Box className={`flex items-center gap-0.5 px-2 py-1 rounded-full text-xs font-semibold ${isPositive ? 'text-success' : 'text-danger'} bg-${isPositive ? 'success' : 'danger'}/10`}>
+                <TrendIcon sx={{ fontSize: 14 }} />
+                <span>{Math.abs(trend)}%</span>
+              </Box>
+            </Box>
+
+            {subtitle && (
+              <Typography className="!text-white/50 !text-sm !font-normal">
+                {subtitle}
+              </Typography>
+            )}
+
+            <Box
+              className="absolute bottom-0 left-0 right-0 h-1"
+              style={{ background: gradient }}
+            />
+          </CardContent>
+        </Card>
+      </Box>
+    </Fade>
+  );
+};
 
 // ─── Active Pie Shape ─────────────────────────────────────────────────────────
 const renderActiveShape = (props) => {
@@ -133,14 +160,24 @@ const ActivityItem = ({ avatar, name, action, time, color, delay }) => (
   </Fade>
 );
 
-// ─── Quick Action Button ──────────────────────────────────────────────────────
+// ─── Quick Action Button (kept for reference, not used in final AI layout) ─────
 const QuickAction = ({ icon, label, gradient, onClick }) => (
-  <Box className="quick-action" onClick={onClick}>
-    <Box className="quick-action-icon" style={{ background: gradient }}>
-      {icon}
+  <Box
+    className="group flex items-center gap-4 p-4 rounded-xl bg-[#1E293B] border border-white/10 
+               hover:border-purple-500/30 hover:shadow-lg hover:-translate-y-0.5 
+               transition-all duration-300 cursor-pointer"
+    onClick={onClick}
+  >
+    <Box
+      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+      style={{ background: gradient }}
+    >
+      {React.cloneElement(icon, { className: 'text-white text-xl' })}
     </Box>
-    <Typography className="quick-action-label">{label}</Typography>
-    <KeyboardArrowRight className="quick-action-arrow" />
+    <Typography className="flex-1 !text-white/80 !text-base !font-medium group-hover:!text-white transition-colors">
+      {label}
+    </Typography>
+    <KeyboardArrowRight className="text-white/40 group-hover:text-white/80 transition-colors text-2xl" />
   </Box>
 );
 
@@ -173,7 +210,12 @@ const HealthcareDashboard = () => {
   const [selectedWard, setSelectedWard] = useState(null);
   const [viewDialogOpen, setViewDialogOpen] = useState(false);
   const [viewType, setViewType] = useState('');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  // AI Assistant state (moved inside component)
+  const [aiPrompt, setAiPrompt] = useState('');
+  const [aiResponse, setAiResponse] = useState('');
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState('');
 
   const navItems = [
     { id: 'dashboard',   label: 'Dashboard',   icon: <Dashboard />,     gradient: GRADIENTS.primary },
@@ -231,6 +273,32 @@ const HealthcareDashboard = () => {
     }
   };
 
+  // ── AI Chat Handler ─────────────────────────────────────────────────────────
+  const handleAiAsk = async () => {
+    if (!aiPrompt.trim()) return;
+    setAiLoading(true);
+    setAiError('');
+    setAiResponse('');
+    try {
+      // Replace with your actual Render backend URL
+      const res = await fetch('https://nexus-backend1.onrender.com/api/ai/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: aiPrompt }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setAiResponse(data.response);
+      } else {
+        setAiError(data.error || 'Request failed');
+      }
+    } catch (err) {
+      setAiError('Network error – please try again.');
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
   // ── Stats ──
   const stats = [
     { title: 'Total Doctors',   value: doctors.length, trend: 12,  subtitle: 'Active physicians',     gradient: GRADIENTS.primary, icon: <MedicalServices />, delay: 0   },
@@ -271,9 +339,8 @@ const HealthcareDashboard = () => {
   ];
   const pieColors = [PALETTE.primary, PALETTE.success, PALETTE.warning];
 
-  // ── Sidebar ──
+  // ── Sidebar (customized) ──
   const drawer = (
-    
     <Box className="sidebar">
       {/* Brand */}
       <Box className="sidebar-brand">
@@ -357,13 +424,103 @@ const HealthcareDashboard = () => {
         variant={isMobile ? 'temporary' : 'permanent'}
         open={isMobile ? mobileOpen : true}
         onClose={() => setMobileOpen(false)}
-        classes={{ paper: 'sidebar-paper' }}
-        PaperProps={{
-          // style: { backgroundColor: '#141414' }   // ← forces background
-        }}
+        classes={{ paper: '!w-[300px] !bg-black !border-r !border-white/10 !overflow-hidden' }}
       >
-        {drawer}
+        <Box className="h-screen flex flex-col py-5 overflow-hidden relative">
+          {/* Brand */}
+          <Box className="flex items-center gap-4 px-6 pb-8 pt-7">
+            <Box className="w-14 h-14 rounded-2xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/50">
+              <LocalHospital className="text-white text-[28px]" />
+            </Box>
+            <Box>
+              <Typography className="!text-white !text-[28px] !font-extrabold tracking-wide leading-tight">
+                ERES
+              </Typography>
+              <Typography className="!text-white/50 !text-xs !uppercase !tracking-wider mt-1">
+                Medical Suite
+              </Typography>
+            </Box>
+          </Box>
+
+          <Divider className="!border-white/10 mx-6" />
+
+          <Typography className="!text-white/50 !text-xs !font-bold !tracking-widest px-6 pt-6 pb-3">
+            NAVIGATION
+          </Typography>
+
+          <List className="px-5 py-2" disablePadding>
+            {navItems.map((item) => {
+              const isActive = activeNav === item.id;
+              return (
+                <ListItem
+                  key={item.id}
+                  className={`!mb-1.5 !rounded-[18px] cursor-pointer transition-colors !p-0 ${
+                    isActive ? 'bg-black/20' : ''
+                  }`}
+                  onClick={() => handleNavClick(item)}
+                  disablePadding
+                >
+                  <Box className={`flex items-center gap-4 p-3.5 rounded-[18px] w-full ${
+                    isActive ? 'bg-black/20' : 'hover:bg-white/5'
+                  }`}>
+                    <Box className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                      isActive ? 'shadow-lg shadow-primary/40' : 'bg-white/5'
+                    }`}
+                      style={isActive ? { background: item.gradient } : {}}>
+                      {item.icon}
+                    </Box>
+                    <Typography className="flex-1 !text-base !font-semibold text-white/80">
+                      {item.label}
+                    </Typography>
+                    {isActive && <Box className="w-2 h-2 rounded-full bg-white shadow-[0_0_10px_white]" />}
+                  </Box>
+                </ListItem>
+              );
+            })}
+          </List>
+
+          <Box flex={1} />
+
+          {/* Upgrade Banner */}
+          <Box className="mx-5 my-4 p-6 rounded-[18px] bg-gradient-to-br from-black/30 to-black/20 border border-white/15 relative overflow-hidden">
+            <Box className="w-10 h-10 rounded-[10px] bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-3">
+              <Star className="text-white text-[22px]" />
+            </Box>
+            <Typography className="!text-white !text-base !font-extrabold mb-1.5">
+              Pro Features
+            </Typography>
+            <Typography className="!text-white/80 !text-xs mb-4 leading-relaxed">
+              Unlock advanced analytics and reports
+            </Typography>
+            <Button className="!bg-gradient-to-r from-primary to-secondary !text-white !text-sm !font-bold !rounded-xl !py-3 !shadow-lg !shadow-primary/40" fullWidth>
+              Upgrade Now
+            </Button>
+          </Box>
+
+          <Divider className="!border-white/10 mx-6" />
+
+          {/* User Profile */}
+          <Box className="flex items-center gap-4 px-6 py-4 mt-auto">
+            <Avatar className="!w-12 !h-12 !bg-gradient-to-r from-primary to-secondary !text-lg !font-bold shrink-0">
+              {userData?.adminName?.[0] || 'A'}
+            </Avatar>
+            <Box>
+              <Typography className="!text-white !text-base !font-bold leading-tight">
+                {userData?.adminName || 'Admin'}
+              </Typography>
+              <Typography className="!text-white/50 !text-xs mt-1">
+                System Admin
+              </Typography>
+            </Box>
+            <Tooltip title="Logout">
+              <IconButton className="!text-white/50 hover:!text-danger transition-colors" onClick={logout}>
+                <Logout sx={{ fontSize: 18 }} />
+              </IconButton>
+            </Tooltip>
+          </Box>
+        </Box>
       </Drawer>
+
       {/* ── Main ── */}
       <Box className="hd-main">
 
@@ -559,9 +716,8 @@ const HealthcareDashboard = () => {
                     </Grid>
                   </Grid>
 
-                  {/* Bottom Row */}
+                  {/* Bottom Row – AI Assistant replaces Quick Actions */}
                   <Grid container spacing={3}>
-
                     {/* Bed Occupancy Area Chart */}
                     <Grid item xs={12} md={5}>
                       <Zoom in timeout={700}>
@@ -618,24 +774,68 @@ const HealthcareDashboard = () => {
                       </Zoom>
                     </Grid>
 
-                    {/* Quick Actions */}
-                    <Grid item xs={12} md={3}>
-                      <Zoom in timeout={800}>
-                        <Card className="chart-card" sx={{ height: '100%' }}>
-                          <CardContent className="chart-card-content">
-                            <Typography className="chart-title" sx={{ mb: 2 }}>Quick Actions</Typography>
-                            <QuickAction icon={<PersonAdd sx={{ fontSize: 18 }} />} label="Add Doctor"
-                              gradient={GRADIENTS.primary}  onClick={() => setDoctorFormOpen(true)} />
-                            <QuickAction icon={<LocalHospital sx={{ fontSize: 18 }} />} label="Add Nurse"
-                              gradient={GRADIENTS.success}  onClick={() => setNurseFormOpen(true)} />
-                            <QuickAction icon={<Group sx={{ fontSize: 18 }} />} label="Add Staff"
-                              gradient={GRADIENTS.warning}  onClick={() => setStaffFormOpen(true)} />
-                            <QuickAction icon={<Bed sx={{ fontSize: 18 }} />} label="Add Ward"
-                              gradient={GRADIENTS.purple}   onClick={() => setWardFormOpen(true)} />
-                          </CardContent>
-                        </Card>
-                      </Zoom>
-                    </Grid>
+                    {/* AI Assistant – new card */}
+                   <Grid item xs={12} md={3}>
+  <Zoom in timeout={800}>
+    <Card className="!bg-[#1E293B] !border !border-white/10 !rounded-2xl !shadow-lg h-full hover:shadow-xl transition-all">
+      <CardContent className="flex flex-col h-full p-6">
+        <Typography className="!text-white !text-xl !font-bold !mb-1">
+          AI Medical Assistant
+        </Typography>
+        <Typography className="!text-white/60 !text-sm !mb-4">
+          Ask any medical or administrative question
+        </Typography>
+
+        <TextField
+          fullWidth
+          multiline
+          rows={3}
+          variant="outlined"
+          placeholder="e.g., What are the symptoms of flu?"
+          value={aiPrompt}
+          onChange={(e) => setAiPrompt(e.target.value)}
+          disabled={aiLoading}
+          sx={{
+            mb: 2,
+            '& .MuiOutlinedInput-root': {
+              backgroundColor: 'rgba(255,255,255,0.03)',
+              '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+              '&:hover fieldset': { borderColor: 'rgba(108,99,255,0.5)' },
+              '&.Mui-focused fieldset': { borderColor: '#6C63FF' },
+            },
+            '& .MuiInputBase-input': { color: 'white' },
+            '& .MuiInputBase-input::placeholder': { color: 'rgba(255,255,255,0.4)' },
+          }}
+        />
+
+        <Button
+          variant="contained"
+          endIcon={aiLoading ? <CircularProgress size={20} color="inherit" /> : <SendIcon />}
+          onClick={handleAiAsk}
+          disabled={aiLoading || !aiPrompt.trim()}
+          fullWidth
+          className="!bg-gradient-to-r from-primary to-secondary !text-white !font-bold !py-3 !rounded-xl !shadow-lg hover:!shadow-xl transition-all !normal-case !text-sm !mb-2 disabled:!opacity-50"
+        >
+          {aiLoading ? 'Asking...' : 'Ask AI'}
+        </Button>
+
+        {aiError && (
+          <Typography className="!text-danger !text-sm !mb-1">
+            {aiError}
+          </Typography>
+        )}
+
+        {aiResponse && (
+          <Box className="mt-1 p-3 bg-white/5 rounded-lg max-h-48 overflow-y-auto">
+            <Typography className="!text-white/80 !text-sm whitespace-pre-wrap">
+              {aiResponse}
+            </Typography>
+          </Box>
+        )}
+      </CardContent>
+    </Card>
+  </Zoom>
+</Grid>
                   </Grid>
                 </Box>
               )}
@@ -798,7 +998,7 @@ const HealthcareDashboard = () => {
                 </Fade>
               )}
 
-              {/* Placeholder for other nav items (nurses, staff, wards) – you can add similar sections */}
+              {/* Placeholder for other nav items */}
               {activeNav === 'departments' && (
                 <Box className="placeholder-panel">
                   <Typography className="placeholder-title">Departments</Typography>

@@ -3,6 +3,7 @@ import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime
+from openai import OpenAI
 
 # Add the directory containing this file to sys.path so that 'config' can be found
 sys.path.insert(0, os.path.dirname(__file__))
@@ -140,6 +141,28 @@ def register_routes():
 
 # Register routes so they are available when Gunicorn imports the app
 register_routes()
+
+# Initialize OpenAI client with your API key from environment variables
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
+@app.route('/api/ai/ask', methods=['POST'])
+def ask_ai():
+    data = request.get_json()
+    prompt = data.get('prompt')
+    if not prompt:
+        return jsonify({'error': 'Missing prompt'}), 400
+
+    try:
+        completion = client.chat.completions.create(
+            model="gpt-3.5-turbo",  # or "gpt-4"
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=500
+        )
+        response = completion.choices[0].message.content
+        return jsonify({'response': response})
+    except Exception as e:
+        print(f"OpenAI error: {e}")
+        return jsonify({'error': 'AI request failed'}), 500
 
 if __name__ == '__main__':
     print("🚀 Starting Nexus AI Multi-Industry Platform...")

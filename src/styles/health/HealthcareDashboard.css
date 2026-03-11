@@ -498,7 +498,7 @@
 .stat-card-wrapper { height: 100%; }
 
 .stat-card {
-  background: var(--bg-card) !important;
+  background: #000000 !important;
   border: 1px solid var(--border) !important;
   border-radius: var(--radius-lg) !important;
   box-shadow: 0 8px 30px rgba(0,0,0,0.5) !important;
@@ -557,7 +557,7 @@
 .stat-number {
   font-size: 52px !important;      /* much bigger */
   font-weight: 800 !important;
-  color: var(--text-primary) !important;
+  color:  #000000 !important;
   line-height: 1 !important;
   margin-bottom: 10px !important;
   letter-spacing: -1.5px !important;
@@ -847,12 +847,6 @@
 
 /* Optional: different color for secondary text */
 .hd-root .sidebar .brand-tagline,
-.hd-root .sidebar .upgrade-desc,
-.hd-root .sidebar .sidebar-user-role {
-  color: rgba(17, 193, 236, 0.7) !important;
-}
-
-/* Main text */
 .hd-root .sidebar .brand-name,
 .hd-root .sidebar .nav-label,
 .hd-root .sidebar .sidebar-user-name,
@@ -866,4 +860,7 @@
 .hd-root .sidebar .sidebar-user-role,
 .hd-root .sidebar .nav-section-label {
   color: rgba(244, 240, 247, 0.7) !important;
+}
+.hd-root .sidebar .sidebar {
+  color: #000000 !important;
 }
