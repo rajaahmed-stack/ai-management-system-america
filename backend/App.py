@@ -127,20 +127,20 @@ def test_database():
         }), 500
 
 # Import and register routes AFTER db is initialized
-def register_routes():
-    from routes.auth_routes import auth_bp
-    from routes.healthcare_routes import healthcare_bp
-    from routes.education_routes import education_bp
+# def register_routes():
+#     from routes.auth_routes import auth_bp
+#     from routes.healthcare_routes import healthcare_bp
+#     from routes.education_routes import education_bp
     
-    # Register blueprints
-    app.register_blueprint(auth_bp, url_prefix='/api/auth')
-    app.register_blueprint(healthcare_bp, url_prefix='/api/healthcare')
-    app.register_blueprint(education_bp, url_prefix='/api/education')
+#     # Register blueprints
+#     app.register_blueprint(auth_bp, url_prefix='/api/auth')
+#     app.register_blueprint(healthcare_bp, url_prefix='/api/healthcare')
+#     app.register_blueprint(education_bp, url_prefix='/api/education')
     
-    print("✅ Routes registered successfully")
+#     print("✅ Routes registered successfully")
 
-# Register routes so they are available when Gunicorn imports the app
-register_routes()
+# # Register routes so they are available when Gunicorn imports the app
+# register_routes()
 
 # Initialize OpenAI client with your API key from environment variables
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
